@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b32828f71a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <!-- home screen -->
+        <section class="screen active" id="home">
+            <section class="headerSection">
+                <div class="profilePic">
+                    <img src="asssets/Aniket.jpg" alt="">
+                </div>
+                <h2>Hello, Aniket</h2>
+                <p>Welcome back</p>
+            </section>
+
+            <section class="balanceCard">
+                <div class="accBalance">
+                    <p>Total balance</p>
+                    <h3>₹2,000.00</h3>
+                </div>
+                <div class="income">
+                    <div class="incomeBox">
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <p>Income</p>
+                    </div>
+                    <h3>₹4000.00</h3>
+                </div>
+                <div class="expense">
+                    <div class="expenseBox">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        <p>Expense</p>
+                    </div>
+                    <h3>₹2000.00</h3>
+                </div>
+            </section>
+
+            <section class="smartInsight">
+                <h4>
+                    YOUR SPENDING INSIGHT
+                </h4>
+                <div class="insightBox">
+                    <p>You've spent 20% more compared to last month.</p>
+                </div>
+            </section>
+
+            <section class="searchSection">
+                <div class="firstPart">
+                    <h3>Recent Transactions</h3>
+                    <span>View all</span>
+                </div>
+                <div class="searchBar">
+                    <div class="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="search your transactions...">
+                    </div>
+                    <div class="filter">
+                        <i class="fa-solid fa-filter"></i>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="recentTransactions">
+                <div class="transactionCard">
+                    <div class="transactionLeft">
+                        <div class="transactionIcon">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+
+                        <div class="transactionDetails">
+                            <p class="category">Food</p>
+                            <p class="description">Lunch at restaurant</p>
+                            <p class="date">14 Sep 2026</p>
+                        </div>
+                    </div>
+
+                    <p class="amount">-₹200</p>
+                </div>
+            </section>
+
+            <section class="savingsGoal">
+                <h3>Savings Goal</h3>
+                
+                <div class="goal-item">
+                    <p class="goal">New laptop</p>
+                    <div class="progress">
+                        <div class="progress-bar">
+                            <div class="real-progress"></div>
+                        </div>
+                        <h4 class="goalPercent">42%</h4>
+                    </div>
+                </div>
+                <div class="goal-item">
+                    <p class="goal">Iphone 17 pro max</p>
+                    <div class="progress">
+                        <div class="progress-bar">
+                            <div class="real-progress"></div>
+                        </div>
+                        <h4 class="goalPercent">22%</h4>
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+        <!-- analytics screen -->
+        <section class="screen" id="analytics"></section>
+        
+        <!-- add transactions screen -->
+        <section class="screen" id="add"></section>
+        
+        <!-- transactions screen -->
+        <section class="screen" id="transactions"></section>
+        
+        <!-- profile screen -->
+        <section class="screen" id="profile"></section>
+        
+        <!-- bottom navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-screen="home">
+                <i class="fa-solid fa-house" style="color: rgb(62, 62, 62);"></i>
+            </button>
+
+            <button class="nav-item" data-screen="analytics">
+                <i class="fa-solid fa-chart-simple" style="color: rgb(62, 62, 62);"></i>
+            </button>
+
+            <button class="add-btn" data-screen="add">
+                <i class="fa-solid fa-plus" style="color: rgb(62, 62, 62);"></i>
+            </button>
+
+            <button class="nav-item" data-screen="transactions">
+                <i class="fa-solid fa-money-bill-trend-up" style="color: rgb(62, 62, 62);"></i>
+            </button>
+            
+            <button class="nav-item" data-screen="profile">
+                <i class="fa-solid fa-user" style="color: rgb(62, 62, 62);"></i>
+            </button>
+        </nav>
+    </main>
+    <script src="logic.js"></script>
+</body>
+</html>

@@ -1,0 +1,502 @@
+@font-face {
+    font-family: curs;
+    src: url(asssets/AnandaBlackPersonalUseRegular-rg9Rx.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: Arial;
+    background-color: #0F172A;
+}
+
+main{
+    width: 100%;
+    max-width: 500px;
+    min-height: 100vh;
+}
+
+.screen{
+    min-height: 100vh;
+    padding-bottom: 90px;
+    display: none;
+}
+
+.screen.active{
+    display: block;
+}
+
+
+/* home screen */
+
+#home.active{
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    padding-left: 20px;
+    align-items: center;
+    gap: 10px;
+}
+
+    /* header section */
+
+    .headerSection{
+        margin-top: 20px;
+        height: 120px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profilePic{
+        height: 60px;
+        width: 60px;
+        border-radius: 100%;
+        overflow: hidden;
+        background-color: blue;
+    }
+
+    .profilePic img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .headerSection p{
+        font-size: 15px;
+    }
+    
+    .headerSection p, h2{
+        color: white;
+        font-family:'Courier New';
+    }
+
+
+
+    /* balance card */
+
+    .balanceCard{
+        min-height: 200px;
+        width: 100%;
+        border-radius: 25px;
+        background: #B993D6;
+        background: -webkit-linear-gradient(to top, #8CA6DB, #B993D6);
+        background: linear-gradient(to top, #8CA6DB, #B993D6);
+        display: grid;
+        grid-template-areas: 
+        "accBalance accBalance"
+        "income expense";
+    }
+
+    .balanceCard .accBalance{
+        grid-area: accBalance;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .balanceCard p{
+        font-size: 18px;
+        color: black;
+    }
+
+    .balanceCard h3{
+        font-family: Courier;
+        font-size: 25px;
+        color: black;
+    }
+
+    .accBalance h3{
+        font-size: 45px;
+    }
+
+    .balanceCard .income , .expense{
+        grid-area: income;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .balanceCard .expense{
+        grid-area: expense;
+    }
+
+    .incomeBox , .expenseBox{
+        display: flex;
+        gap: 10px;
+    }
+
+
+
+    /* smart insight */
+
+    .smartInsight{
+        width: 100%;
+        padding: 20px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .smartInsight h4{
+        color: white;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+    }
+
+    .insightBox{
+        width: 90%;
+        min-height: 70px;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(113, 232, 50, 0.45);
+        border-radius: 14px;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .insightBox p{
+        color: white;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+
+    /* search */
+
+    .searchSection{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .firstPart{
+        display: flex;
+        justify-content: space-between;
+        color: white;
+    }
+
+    .firstPart span{
+        color: rgb(112, 249, 249);
+    }
+
+    .searchBar{
+        height: 100%;
+        display: flex;
+        color: black;
+    }
+
+    .searchBar .search{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        background-color: white;
+    }
+
+    .search :first-child{
+        padding: 3px;
+        font-size: 20px;
+        width: 23px;
+    }
+
+    .search input{
+        width: 100%;
+    }
+
+    .filter{
+        width: 30px;
+        display: grid;
+        place-items: center;
+        border-left: 1px solid;
+        background-color: white;
+    }
+
+    .filter :first-child{
+        font-size: 20px;
+    }
+
+
+
+
+    /* recent transactions */
+
+    .recentTransactions{
+        padding: 10px 0px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .recentTransactions .transactionCard{
+        min-height:75px;
+        width:100%;
+        padding:12px 15px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        background:rgba(255,255,255,.06);
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:14px;
+        color:white;
+        transition:all .2s ease;
+    }
+
+    .recentTransactions .transactionCard:hover{
+        transform:translateY(-2px);
+        background:rgba(255,255,255,.09);
+    }
+
+    .transactionLeft{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        min-width:0;
+    }
+
+    .transactionIcon{
+        height:42px;
+        width:42px;
+        flex-shrink:0;
+        display:grid;
+        place-items:center;
+        border-radius:12px;
+        background:rgba(113,232,50,.15);
+    }
+
+    .transactionIcon i{
+        font-size:17px;
+        color:#71e832;
+    }
+
+    .transactionDetails{
+        min-width:0;
+        display:flex;
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .transactionDetails .category{
+        color:white;
+        font-size:15px;
+        font-weight:600;
+    }
+
+    .transactionDetails .description{
+        max-width:180px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        color:rgba(255,255,255,.55);
+        font-size:16px;
+    }
+
+    .transactionDetails .date{
+        color:rgba(255,255,255,.4);
+        font-size:14px;
+    }
+
+    .transactionCard .amount{
+        flex-shrink:0;
+        margin-left:10px;
+        font-family:Courier,monospace;
+        font-size:14px;
+        font-weight:bold;
+        color:white;
+    }
+
+
+
+    /* savings goal */
+
+    .savingsGoal{
+        width: 100%;
+        padding: 20px 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        color: white;
+    }
+
+    .savingsGoal > h3{
+        font-size: 18px;
+        margin-bottom: 3px;
+    }
+
+    .savingsGoal .goal-item{
+        width: 100%;
+        padding: 15px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+
+        transition: all 0.2s ease;
+    }
+
+    .savingsGoal .goal-item:hover{
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.09);
+    }
+
+    .goal-item .goal{
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .goal-item .progress{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .progress .progress-bar{
+        height: 9px;
+        flex: 1;
+        overflow: hidden;
+
+        border-radius: 100px;
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .progress-bar .real-progress{
+        height: 100%;
+        width: 42%;
+
+        border-radius: 100px;
+        background: linear-gradient(
+            to right,
+            #71e832,
+            #70f9f9
+        );
+    }
+
+    .progress .goalPercent{
+        min-width: 35px;
+        color: white;
+        font-family: monospace;
+        font-size: 13px;
+        text-align: right;
+    }
+
+
+    .smartInsight h4,
+    .firstPart h3,
+    .savingsGoal > h3{
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+
+
+
+/* bottom navigation */
+
+.bottom-nav{
+    height: 75px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 100;
+}
+
+.bottom-nav button{
+    height: 52px;
+    width: 52px;
+
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+
+    display: grid;
+    place-items: center;
+
+    cursor: pointer;
+
+    transition:
+        all 0.2s ease;
+}
+
+.bottom-nav button :first-child{
+    font-size: 21px;
+}
+
+.bottom-nav .nav-item.active{
+    background: rgba(113, 232, 50, 0.5);
+}
+
+.bottom-nav .nav-item:hover{
+    transform: translateY(-2px);
+}
+
+/* Add button */
+
+.bottom-nav .add-btn{
+    height: 65px;
+    width: 65px;
+
+    border: 3px solid #0F172A;
+    background: linear-gradient(
+        135deg,
+        #71e832,
+        #70f9f9
+    );
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.bottom-nav .add-btn :first-child{
+    font-size: 26px;
+}
+
+.bottom-nav .add-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.3);
+}
+
+.bottom-nav .add-btn:active{
+    transform: scale(0.94);
+}
