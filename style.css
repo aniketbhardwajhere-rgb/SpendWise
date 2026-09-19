@@ -193,50 +193,79 @@ main{
     }
 
     .firstPart{
-        display: flex;
-        justify-content: space-between;
-        color: white;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        color:white;
     }
 
     .firstPart span{
-        color: rgb(112, 249, 249);
+        color:#70f9f9;
+        font-size:13px;
+        cursor:pointer;
     }
 
     .searchBar{
-        height: 100%;
-        display: flex;
-        color: black;
+        width:100%;
+        height:44px;
+        display:flex;
+        gap:8px;
     }
 
     .searchBar .search{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        background-color: white;
+        flex:1;
+        height:100%;
+        display:flex;
+        align-items:center;
+        gap:10px;
+        padding:0 13px;
+        background:rgba(255,255,255,.06);
+        border:1px solid rgba(255,255,255,.1);
+        border-radius:12px;
     }
 
-    .search :first-child{
-        padding: 3px;
-        font-size: 20px;
-        width: 23px;
+    .search .fa-magnifying-glass{
+        flex-shrink:0;
+        font-size:15px;
+        color:rgba(255,255,255,.5);
     }
 
     .search input{
-        width: 100%;
+        width:100%;
+        height:100%;
+        border:none;
+        outline:none;
+        background:transparent;
+        color:white;
+        font-size:13px;
+    }
+
+    .search input::placeholder{
+        color:rgba(255,255,255,.4);
     }
 
     .filter{
-        width: 30px;
-        display: grid;
-        place-items: center;
-        border-left: 1px solid;
-        background-color: white;
+        height:44px;
+        width:44px;
+        flex-shrink:0;
+        display:grid;
+        place-items:center;
+        background:rgba(255,255,255,.06);
+        border:1px solid rgba(255,255,255,.1);
+        border-radius:12px;
+        cursor:pointer;
+        transition:all .2s ease;
     }
 
     .filter :first-child{
-        font-size: 20px;
+        font-size:15px;
+        color:rgba(255,255,255,.65);
     }
 
+    .filter:hover{
+        background:rgba(255,255,255,.1);
+        transform:translateY(-1px);
+    }
 
 
 
@@ -327,7 +356,15 @@ main{
         color:white;
     }
 
-
+    .emptyMessage{
+        min-height:100px;
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        color:rgba(255,255,255,.45);
+        font-size:14px;
+    }
 
     /* savings goal */
 
@@ -415,6 +452,150 @@ main{
         font-weight: 700;
     }
 
+
+
+/* add transaction screen */
+
+#add{
+    padding: 25px 20px 110px;
+}
+
+.addHeader{
+    margin-bottom: 25px;
+}
+
+.addHeader h2{
+    color: white;
+    font-family: Arial;
+    font-size: 24px;
+}
+
+.addHeader p{
+    margin-top: 5px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 14px;
+}
+
+.transactionForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.typeToggle{
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    gap: 5px;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+}
+
+.typeBtn{
+    flex: 1;
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.typeBtn.active{
+    background: rgba(113, 232, 50, 0.2);
+    color: white;
+}
+
+.formGroup{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup p{
+    color: red;
+    display: none;
+}
+
+.formGroup label{
+    color: white;
+    font-size: 14px;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea{
+    width: 100%;
+    padding: 13px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+
+    font-family: Arial;
+    font-size: 14px;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder{
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.formGroup textarea{
+    min-height: 90px;
+    resize: vertical;
+}
+
+.formGroup select option{
+    color: black;
+}
+
+.formGroup input[type="date"]::-webkit-calendar-picker-indicator{
+    filter: invert(1);
+}
+
+.addTransactionBtn{
+    margin-top: 5px;
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #71e832,
+        #70f9f9
+    );
+
+    color: #0F172A;
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.addTransactionBtn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.addTransactionBtn:active{
+    transform: scale(0.98);
+}
 
 
 

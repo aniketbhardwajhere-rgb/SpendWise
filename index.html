@@ -22,21 +22,21 @@
             <section class="balanceCard">
                 <div class="accBalance">
                     <p>Total balance</p>
-                    <h3>₹2,000.00</h3>
+                    <h3 id="totalBalance">₹2,000.00</h3>
                 </div>
                 <div class="income">
                     <div class="incomeBox">
                         <i class="fa-solid fa-arrow-down"></i>
                         <p>Income</p>
                     </div>
-                    <h3>₹4000.00</h3>
+                    <h3 id="totalIncome">₹4000.00</h3>
                 </div>
                 <div class="expense">
                     <div class="expenseBox">
                         <i class="fa-solid fa-arrow-up"></i>
                         <p>Expense</p>
                     </div>
-                    <h3>₹2000.00</h3>
+                    <h3 id="totalExpense">₹2000.00</h3>
                 </div>
             </section>
 
@@ -66,7 +66,7 @@
             </section>
             
             <section class="recentTransactions">
-                <div class="transactionCard">
+                <!-- <div class="transactionCard">
                     <div class="transactionLeft">
                         <div class="transactionIcon">
                             <i class="fa-solid fa-utensils"></i>
@@ -80,7 +80,7 @@
                     </div>
 
                     <p class="amount">-₹200</p>
-                </div>
+                </div> -->
             </section>
 
             <section class="savingsGoal">
@@ -111,7 +111,59 @@
         <section class="screen" id="analytics"></section>
         
         <!-- add transactions screen -->
-        <section class="screen" id="add"></section>
+        <section class="screen" id="add">
+            <section class="addHeader">
+                <h2>Add Transaction</h2>
+                <p>Track your money</p>
+            </section>
+
+            <section class="transactionForm">
+
+                <div class="typeToggle">
+                    <button class="typeBtn active" data-type="expense">Expense</button>
+                    <button class="typeBtn" data-type="income">Income</button>
+                </div>
+
+                <div class="formGroup">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" placeholder="₹ 0.00" required>
+                    <p class="amountError">Please enter a valid amount.</p>
+                </div>
+
+                <div class="formGroup">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Select category</option>
+                        <option value="Food">Food</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Health">Health</option>
+                        <option value="Education">Education</option>
+                        <option value="Salary">Salary</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <p class="categoryError">Please select a category.</p>
+                </div>
+
+                <div class="formGroup">
+                    <label for="description">Description</label>
+                    <textarea id="description" placeholder="What's this for?"></textarea>
+                </div>
+
+                <div class="formGroup">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                    <p class="dateError">Please select a date.</p>
+                </div>
+
+                <button class="addTransactionBtn">
+                    Add Transaction
+                </button>
+
+            </section>
+        </section>
         
         <!-- transactions screen -->
         <section class="screen" id="transactions"></section>
