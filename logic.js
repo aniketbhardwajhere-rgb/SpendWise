@@ -540,8 +540,10 @@ transactionUpdateBtn.addEventListener("click", () =>{
     addTransactionBtn.textContent = "Save changes";
     isEditing = true;
     const addTransactionScreen = document.querySelector("#add");
-    transactionDetailModal.classList.remove("show");
+    const transactionScreen = document.querySelector("#transactions");
     addTransactionScreen.classList.add("active");
+    transactionDetailModal.classList.remove("show");
+    transactionScreen.classList.remove("active");
 
 });
 
